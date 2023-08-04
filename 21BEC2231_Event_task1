@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class 21BEC2231_Event_task1 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter area in square meters : ");
+		int area=sc.nextInt();
+		System.out.println("Enter number of occupants: ");
+		int people=sc.nextInt();
+		System.out.println("Enter type of building: ");
+		String type=sc.next();
+		System.out.println("Enter outdoor temperature in celsius: ");
+		float outtemp=sc.nextFloat();
+		System.out.println("Enter indoor temperature in celcius: ");
+		float intemp=sc.nextFloat();
+		int Cooling_Load=0;
+		if (type=="residential") {
+			Cooling_Load = 100 * people;
+		}
+		else {
+			Cooling_Load = 150 * people;
+		}
+		int U=30;
+		float Q_conduction = U * area * (outtemp-intemp);
+		float Sensible_Cooling_Load = Q_conduction + Cooling_Load;
+		System.out.println("Sensible cooling load is: "+Sensible_Cooling_Load+" W");
+
+	}
+
+}
